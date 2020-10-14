@@ -1,0 +1,14 @@
+{
+  "name": "platziusers",
+  "version": "1.0.0",
+  "description": "Sitio web que consume una api para ver informacion de los usuarios registrados en Platzi.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jose Padron",
+  "license": "MIT",
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
+}

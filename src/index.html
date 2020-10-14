@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Platzi Users</title>
+  <link rel="stylesheet" href="CSS/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <section class="main">
+    <img src="img/Logo.png" alt="Logo Platzi Users">
+    <h2>Buscar más usuarios</h2>
+    <div class="main-search">
+      <input type="text" placeholder="Nombre de usuario">
+      <button>Buscar</button>
+    </div>
+  </section>
+
+  <section class="users">
+    <div class="users-content">
+      <div class="users-card">
+        <div class="users-card_content">
+          <div class="perfil">
+            <img src="img/joselpadronc_bfd3103a-1519-4058-a065-76000dc7b845.webp" id="img-perfil" alt="Imagen perfil">
+            <div class="perfil-text">
+              <h4 id="nombre-persona">José Padrón</h4>
+              <p id="username-persona">username</p>
+            </div>
+          </div>
+          <div class="web-ranck">
+            <p><a href="platzi.com" id="web-persona">platzi.com</a></p>
+            <p id="ranck-persona">10.100 pts</p>
+          </div>
+          <div class="description">
+            <p id="desc-persona">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam perspiciatis mollitia hic animi praesentium reprehenderit enim accusantium minus.</p>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <script src="js/fetchData.js"></script>
+  <script src="js/4users.js"></script>
+</body>
+</html>
