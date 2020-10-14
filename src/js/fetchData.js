@@ -17,4 +17,4 @@ const fetchData = (url_api) => {
   })
 }
 
-module.exports = fetchData
+export default fetchData
