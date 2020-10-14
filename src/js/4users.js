@@ -1,4 +1,4 @@
-import fetchData from './fetchData'
+import fetchData from './fetchData.js'
 
 const imgPerfil = document.getElementById('img-perfil')
 const nombrePersona = document.getElementById('nombre-persona')
@@ -13,6 +13,7 @@ const API = 'https://platzi-user-api.jecsham.com/api/v1/getUserSummary/@'
 let username = 'joselpadronc'
 let APIData
 
+
 fetchData(API+username)
   .then( (response) => {
     APIData = response
@@ -23,18 +24,21 @@ fetchData(API+username)
     console.error(error)
   })
 
-
 const fillDataCard = (APIData) => {
   // console.log(APIData.userData)
-  imgPerfil.src(APIData.userData.avatar)
-  nombrePersona.innerText(APIData.userData.name)
-  usernamePersona.innerText(APIData.userData.username)
-  ranckPersona.innerText(APIData.userData.platzi_rank)
-  descPersona.innerText(APIData.userData.description)
-
+  imgPerfil.src = APIData.userData.avatar
+  nombrePersona.innerText = APIData.userData.name
+  usernamePersona.innerText = APIData.userData.username
+  webPersona.href = APIData.userData.website
+  webPersona.innerText = 'Sitio web'
+  ranckPersona.innerText = APIData.userData.platzi_rank + ' pts'
+  descPersona.innerText = APIData.userData.description
+  
   console.log(APIData.userData.avatar)
   console.log(APIData.userData.name)
   console.log(APIData.userData.username)
+  console.log(APIData.userData.website)
   console.log(APIData.userData.platzi_rank)
   console.log(APIData.userData.description)
+  
 }
