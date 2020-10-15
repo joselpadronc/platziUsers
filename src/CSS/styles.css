@@ -93,21 +93,11 @@
   .users-content {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(2, 250px);
-    grid-gap: 25px;
+    grid-template-columns: 250px;
+    /* grid-gap: 25px; */
+    
   }
-}
-
-@media screen and (min-width: 1024px) {
-  .users-content {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(4, 250px);
-    grid-gap: 25px;
-  }
-
   .users-card {
     margin-bottom: 0;
   }
-  
 }
