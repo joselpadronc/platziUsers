@@ -24,11 +24,11 @@ const searchingUser = () => {
   fetch(`${API}${user}`)
     .then((response) => {
       if(response.ok) {
-        console.log(`user ${user}`)
-        console.log(response)
+        // console.log(`user ${user}`)
+        // console.log(response)
         response.json()
           .then((JSONresponse) => {
-            console.log(JSONresponse)
+            // console.log(JSONresponse)
             fillDataCard(JSONresponse)
           })
           .catch((error) => {
