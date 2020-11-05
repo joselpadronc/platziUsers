@@ -100,7 +100,7 @@
   background-color: rgb(245, 245, 245);
   display: flex;
   justify-content: space-between;
-  /* grid-gap: 10px; */
+  grid-gap: 20px;
   align-items: center;
   border-radius: 8px;
   margin-bottom: 8px;

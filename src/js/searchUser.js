@@ -34,6 +34,7 @@ const searchingUser = () => {
           .catch((error) => {
             console.error(error);
           })
+          return user
       }
 
       return APIData
@@ -56,9 +57,13 @@ const fillDataCard = (APIData) => {
 
 
 const showModal = btnSearch.addEventListener('click', () => {
-  userModal.style.display = 'flex'
-  searchingUser()
-  fillDataCard(APIData)
+  if (usernameField.value === "") {
+    alert('Ingresa el nombre de usuario')
+  } else {
+    userModal.style.display = 'flex'
+    searchingUser()
+    fillDataCard(APIData)
+  }
 })
 
 const closeModal = userModalBtnClose.addEventListener('click', () => {
