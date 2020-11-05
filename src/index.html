@@ -8,12 +8,39 @@
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <article class="userModal">
+    <div class="userModal-content">
+      <div class="userModal-card">
+        <button class="userModal-cerrar" id="userModal-cerrar">X</button>
+        <div class="userModal-card_content">
+          <div class="userModal-perfil">
+            <img src="" id="userModal-imgPerfil" alt="Imagen perfil">
+            <div class="userModal-textPerfil">
+              <h4 id="userModal-nombrePersona">Jose Padron</h4>
+              <p id="userModal-usernamePersona">joselpadronc</p>
+            </div>
+          </div>
+          <div class="userModal-webranck">
+            <p><a href="" id="userModal-webPersona" target="_blanck">google.com</a></p>
+            <p id="userModal-ranckPersona">10.000</p>
+          </div>
+          <div class="userModal-cursosCarreras">
+            <p id="userModal-cursosPersona">50 Cursos</p>
+            <p id="userModal-carrerasPersona">5 Carreras</p>
+          </div>
+          <div class="userModal-description">
+            <p id="userModal-descPersona">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea facilis voluptatem quia possimus adipisci culpa sequi quam fuga nostrum eaque maxime at cum, error placeat qui aperiam quo debitis magni!</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
   <section class="main">
     <img src="img/Logo.png" alt="Logo Platzi Users">
     <h2>Buscar más usuarios</h2>
     <div class="main-search">
-      <input type="text" placeholder="Nombre de usuario">
-      <button>Buscar</button>
+      <input type="text" placeholder="Nombre de usuario" name="searchUser" id="username-field">
+      <button type="button"id="btn-search">Buscar</button>
     </div>
   </section>
 
@@ -40,5 +67,6 @@
   </section>
   
   <script type="module" src="js/1user.js"></script>
+  <script type="module" src="js/searchUser.js"></script>
 </body>
 </html>

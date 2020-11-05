@@ -32,11 +32,4 @@ const fillDataCard = (APIData) => {
   webPersona.innerText = 'Sitio web'
   ranckPersona.innerText = APIData.userData.platzi_rank + ' pts'
   descPersona.innerText = APIData.userData.description
-  
-  console.log(APIData.userData.avatar)
-  console.log(APIData.userData.name)
-  console.log(APIData.userData.username)
-  console.log(APIData.userData.website)
-  console.log(APIData.userData.platzi_rank)
-  console.log(APIData.userData.description)
 }
