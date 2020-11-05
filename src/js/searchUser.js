@@ -3,6 +3,7 @@ let usernameField = document.getElementById('username-field')
 const btnSearch = document.getElementById('btn-search')
 const userModal = document.querySelector('.userModal')
 const userModalBtnClose = document.getElementById('userModal-cerrar')
+const loader = document.getElementById('loader')
 
 // Elementos para pintar datos
 const userModalImgPerfil = document.getElementById('userModal-imgPerfil')
@@ -24,11 +25,8 @@ const searchingUser = () => {
   fetch(`${API}${user}`)
     .then((response) => {
       if(response.ok) {
-        // console.log(`user ${user}`)
-        // console.log(response)
         response.json()
           .then((JSONresponse) => {
-            // console.log(JSONresponse)
             fillDataCard(JSONresponse)
           })
           .catch((error) => {
@@ -60,8 +58,12 @@ const showModal = btnSearch.addEventListener('click', () => {
   if (usernameField.value === "") {
     alert('Ingresa el nombre de usuario')
   } else {
-    userModal.style.display = 'flex'
     searchingUser()
+    loader.style.display = 'flex'
+    setTimeout(()=>{
+      loader.style.display = 'none'
+      userModal.style.display = 'flex'
+    },500)
     fillDataCard(APIData)
   }
 })
