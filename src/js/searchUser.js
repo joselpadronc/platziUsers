@@ -13,6 +13,7 @@ const userModalRanckPerson = document.getElementById('userModal-ranckPersona')
 const userModalcoursesPerson = document.getElementById('userModal-cursosPersona')
 const userModalcareersPerson = document.getElementById('userModal-carrerasPersona')
 const userModalDescPerson = document.getElementById('userModal-descPersona')
+const userModalBtnPerfil = document.getElementById('userModal-btnPerfil')
 
 const API = 'https://platzi-user-api.jecsham.com/api/v1/getUserSummary/@'
 let APIData
@@ -48,8 +49,9 @@ const fillDataCard = (APIData) => {
   userModalWebPerson.innerText = 'Sitio web'
   userModalRanckPerson.innerText = APIData.userData.platzi_rank + ' pts'
   userModalcoursesPerson.innerText = APIData.userData.courses.length + ' Cursos'
-  userModalcareersPerson.innerText = APIData.userData.careers.length + ' Carreras'
+  userModalcareersPerson.innerText = APIData.userData.careers.length + ' Carrera/s'
   userModalDescPerson.innerText = APIData.userData.description
+  userModalBtnPerfil.href = APIData.userData.profile_url
 }
 
 
