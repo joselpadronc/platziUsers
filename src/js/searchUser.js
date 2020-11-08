@@ -27,7 +27,11 @@ const searchingUser = () => {
       if(response.ok) {
         response.json()
           .then((JSONresponse) => {
-            fillDataCard(JSONresponse)
+            setTimeout(async ()=>{
+              loader.style.display = 'none'
+              userModal.style.display = 'flex'
+              await fillDataCard(JSONresponse)
+            },800)
           })
           .catch((error) => {
             console.error(error);
@@ -60,15 +64,9 @@ const showModal = btnSearch.addEventListener('click', () => {
   } else {
     searchingUser()
     loader.style.display = 'flex'
-    setTimeout(()=>{
-      loader.style.display = 'none'
-      userModal.style.display = 'flex'
-    },500)
-    fillDataCard(APIData)
   }
 })
 
 const closeModal = userModalBtnClose.addEventListener('click', () => {
   userModal.style.display = 'none'
 })
-

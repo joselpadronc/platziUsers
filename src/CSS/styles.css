@@ -44,6 +44,8 @@
   cursor: pointer;
 }
 
+
+/* LOADER */
 .loader-content {
   display: none;
   justify-content: center;
@@ -56,7 +58,6 @@
   backdrop-filter: blur(5px);
 }
 
-/* LOADER */
 .loader {
   position: absolute;
   margin-left: auto;
@@ -215,7 +216,36 @@
   padding: 20px;
 }
 
+.users-card_loader {
+  display: none;
+  top: 60vh;
+  left: 40%;
+  position: absolute;
+  background-color: #3498db;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.card-loader {
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #8DDC00;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .users-card {
+  display: none;
   width: 100%;
   height: auto;
   left: 196px;
@@ -265,5 +295,9 @@
   }
   .users-card {
     margin-bottom: 0;
+  }
+
+  .users-card_loader {
+    left: 50%;
   }
 }
