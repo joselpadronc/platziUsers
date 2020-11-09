@@ -19,30 +19,40 @@ const userModalBtnPerfil = document.getElementById('userModal-btnPerfil')
 const API = 'https://platzi-user-api.jecsham.com/api/v1/getUserSummary/@'
 let APIData
 
-const searchingUser = () => {
-  let user = usernameField.value
+const showModal = btnSearch.addEventListener('click', () => {
+  if (usernameField.value === "") {
+    alert('Ingresa el nombre de usuario')
+  } else {
+    loader.style.display = 'flex'
 
-  fetch(`${API}${user}`)
-    .then((response) => {
-      if(response.ok) {
-        response.json()
-          .then((JSONresponse) => {
-            setTimeout(async ()=>{
+    let user = usernameField.value
+    
+    fetch(`${API}${user}`)
+      .then((response) => {
+        if(response.ok) {
+          response.json()
+            .then((JSONresponse) => {
               loader.style.display = 'none'
               userModal.style.display = 'flex'
-              await fillDataCard(JSONresponse)
-            },800)
-          })
-          .catch((error) => {
-            console.error(error);
-          })
-          return user
-      }
+              fillDataCard(JSONresponse)
+            })
+            .catch((error) => {
+              console.error(error);
+            })
+            return user
+        }
+    
+        return APIData
+      })
+      .catch((data) => console.log(data))
+  }
+})
 
-      return APIData
-    })
-    .catch((data) => console.log(data))
-}
+const closeModal = userModalBtnClose.addEventListener('click', () => {
+  userModal.style.display = 'none'
+})
+
+
 
 const fillDataCard = (APIData) => {
   userModalImgPerfil.src = APIData.userData.avatar
@@ -56,17 +66,3 @@ const fillDataCard = (APIData) => {
   userModalDescPerson.innerText = APIData.userData.description
   userModalBtnPerfil.href = APIData.userData.profile_url
 }
-
-
-const showModal = btnSearch.addEventListener('click', () => {
-  if (usernameField.value === "") {
-    alert('Ingresa el nombre de usuario')
-  } else {
-    searchingUser()
-    loader.style.display = 'flex'
-  }
-})
-
-const closeModal = userModalBtnClose.addEventListener('click', () => {
-  userModal.style.display = 'none'
-})
